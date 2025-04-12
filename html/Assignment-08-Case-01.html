@@ -2,9 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Case-01</title>
+    <style>
+        h1{
+            display: flex;
+            justify-content: center;
+            color: deeppink;
+        }
+        section{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 100px;
+        }
+    </style>
 </head>
 <body>
 <h1>JS Que</h1>
+<section>
+    <div>A</div>
+    <div>B</div>
+    <div>C</div>
+    <div>D</div>
+    <div>E</div>
+    <div>F</div>
+</section>
+
+<script>
+    let data=['A','B','C','D','E','F'];
+
+    const updateLetters=()=>{
+        let lastLetter=data.pop();
+        data.unshift(lastLetter);
+
+        data.map((value,index)=>{
+            document.getElementsByTagName("div")[index].innerText=value;
+        });
+
+    }
+    setInterval(updateLetters,3000);
+</script>
 </body>
 </html>
